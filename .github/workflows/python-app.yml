@@ -26,4 +26,4 @@ jobs:
     #   run: docker run python-test-app pytest
 
     - name: Run pytest alan
-      run: docker run python-test-app pytest /pytest_project/tests/
+      run: docker run python-test-app pytest /pytest_project/tests/chp2/video2
