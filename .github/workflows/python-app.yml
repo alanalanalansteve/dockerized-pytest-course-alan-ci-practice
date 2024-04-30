@@ -22,5 +22,8 @@ jobs:
     - name: Install Dependencies
       run: docker run python-test-app pip install -r /pytest_project/test-requirements.txt
 
-    - name: Run pytest
-      run: docker run python-test-app pytest
+    # - name: Run pytest
+    #   run: docker run python-test-app pytest
+
+    - name: Run pytest alan
+      run: docker run python-test-app pytest /tests
