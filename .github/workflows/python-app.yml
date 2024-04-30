@@ -1,0 +1,26 @@
+name: Python application test
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      app:
+        image: docker://docker.io/library/python:3.7.6-buster
+        options: --workdir /pytest_project
+        volumes:
+          - .:/pytest_project
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build the Docker container
+      run: docker build -t python-test-app .
+
+    - name: Install Dependencies
+      run: docker run python-test-app pip install -r /pytest_project/test-requirements.txt
+
+    - name: Run pytest
+      run: docker run python-test-app pytest
