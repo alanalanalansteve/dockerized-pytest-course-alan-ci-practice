@@ -5,3 +5,4 @@ __pycache__
 pytestdebug.log
 .coverage
 .DS_Store
+.vscode/launch.json
